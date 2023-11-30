@@ -1,0 +1,40 @@
+/* card.css */
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 18%;
+  height: 300px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: #615d5d; /* Add your desired background color */
+  border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+
+.card-body {
+  padding: 10px;
+  font-family:monospace
+}
+
+.card-title {
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bolder;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
