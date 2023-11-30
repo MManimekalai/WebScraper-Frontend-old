@@ -4,6 +4,7 @@ import SearchBar from './Components/SearchBar';
 import ProductList from './Components/ProductList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import API_BASE_URL from './config';
 
 const Dashboard = () => {
 
@@ -14,7 +15,7 @@ const Dashboard = () => {
   const handleSearch = async (searchTerm) => {
     //console.log("searchTerm", searchTerm)
     try {
-      const response = await axios.get(`http://localhost:4000/api/search?term=${searchTerm}`);
+      const response = await axios.get(`${API_BASE_URL}/api/search?term=${searchTerm}`);
       setSearchResults(response.data);
       //console.log("searchResults", searchResults)
     } catch (error) {

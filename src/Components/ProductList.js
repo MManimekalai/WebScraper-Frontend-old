@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './card.css';
+import API_BASE_URL from '../config'
 
 const ProductList = ({ searchResults }) => {
   const [products, setProducts] = useState({ });
@@ -13,7 +14,7 @@ const ProductList = ({ searchResults }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/fetch');
+        const response = await axios.get(`${API_BASE_URL}/api/fetch`);
         const { amazonProducts, flipkartProducts, snapdealProducts } = response.data;
         const FinalProducts = [...amazonProducts, ...flipkartProducts, ...snapdealProducts];
         setProducts(FinalProducts);
